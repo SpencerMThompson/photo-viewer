@@ -63,6 +63,6 @@ const styles = StyleSheet.create({
   },
   title: {
     margin: 10,
-    color: '#ccc',
+    color: 'black',
   }
 });

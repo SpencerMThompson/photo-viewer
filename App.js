@@ -9,17 +9,27 @@ import {
 } from 'react-native';
 import PostContainer from './PostContainer';
 import PhotoViewer from './PhotoViewer';
+import * as SplashScreen from 'expo-splash-screen';
 
-const image1 = require('./images/01.jpg');
-const image2 = require('./images/02.jpg');
-const image3 = require('./images/03.jpg');
-const image4 = require('./images/04.jpg');
+SplashScreen.preventAutoHideAsync();
+setTimeout(SplashScreen.hideAsync, 2000);
+
+const image1 = require('./images/01.png');
+const image2 = require('./images/02.png');
+const image3 = require('./images/03.png');
+const image4 = require('./images/04.png');
+const image5 = require('./images/05.png');
+const image6 = require('./images/06.png');
+const image7 = require('./images/07.png');
 
 const timeline = [
-  { title: 'Enjoying the fireworks', image: image1 },
-  { title: 'Climbing Mount Fuji', image: image2 },
-  { title: 'Check my last picture', image:  image3 },
-  { title: 'Sakuras are beautiful!', image: image4 },
+  { title: 'Great Wall of China', image: image1 },
+  { title: 'Petra', image: image2 },
+  { title: 'The Redeemer', image:  image3 },
+  { title: 'Machu Picchu', image: image4 },
+  { title: 'Chichen Itza', image: image5 },
+  { title: 'Colosseum', image: image6 },
+  { title: 'Taj Mahal', image: image7 },
 ];
 
 export default class App extends Component {
@@ -64,7 +74,7 @@ export default class App extends Component {
         {
           timeline.map((post, index) =>
             <PostContainer key={index} post={post}
-            onPress={this.showImage} />
+            onPress={this.showImage}/>
           )
         }
         </ScrollView>
